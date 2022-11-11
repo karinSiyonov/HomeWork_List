@@ -1,0 +1,66 @@
+﻿@page "/List"
+<h3>ListsIf</h3>
+<input type="text" @bind="number1" />
+<br />
+<input type="text" @bind="number2" />
+<br />
+<input type="text" @bind="number3" />
+<br />
+<input type="text" @bind="number4" />
+<br />
+<input type="text" @bind="number5" />
+<br />
+<button @onclick="calc">absorption</button>
+<button @onclick="add">accountant</button>
+<br />
+<span> @messege </span>
+<br />
+@code {
+	string number1 = "";
+	string number2 = "";
+	string number3 = "";
+	string number4 = "";
+	string number5 = "";
+	string messege = "";
+	double maximum = 0;
+	double average = 0;
+	double avgCounter = 0;
+	List<double> numbers = new List<double>();
+
+	void add()
+	{
+		foreach (double number in numbers)
+		{
+
+		}
+		{
+			numbers.Add(Convert.ToDouble(numbers));
+		}
+	}
+	void calc()
+	{
+
+		if (numbers.Count < 5)
+		{
+			Console.WriteLine(numbers.Count);
+			messege = "put 5 numbers!";
+		}
+		else
+		{
+			numbers.Sort();
+			maximum = numbers[4];
+			{
+				foreach (double number in numbers)
+				{
+					if (number % 2 == 0)
+					{
+						avgCounter++;
+						average = average + number;
+					}
+				}
+				messege += " sum of numbers : " + numbers.Sum().ToString() + "the max number is:" + maximum.ToString() + "average the Even numbers is:" + (average / avgCounter).ToString();
+
+			}
+		}
+	}
+}
